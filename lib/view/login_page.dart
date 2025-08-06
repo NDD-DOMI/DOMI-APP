@@ -10,31 +10,27 @@ class LoginPage extends StatefulWidget {
   State<LoginPage> createState() => _LoginPageState();
 }
 class _LoginPageState extends State<LoginPage> {
-  bool obspwText= true;
+  bool obsPwText= true;
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: (){
-        FocusScope.of(context).unfocus();
-      },
-      child: Scaffold(
+    return Scaffold(
         resizeToAvoidBottomInset: false,
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Image.asset('asset/images/domi.png',width: 100.w),
               SizedBox(height: 12.h),
               Image.asset('asset/images/title.png',),
               SizedBox(height: 47.h),
-              TextsField(title: '아이디',hintText: '아이디를 입력', obsText: false, suffixIcon: null,),
+              DomiTextField(title: '아이디',hintText: '아이디를 입력', obsText: false, suffixIcon: null,),
               SizedBox(height: 20.h),
-              TextsField(title: '비밀번호', hintText:'비밀번호를 입력', obsText: obspwText, suffixIcon: GestureDetector(
-                  onTap: ()=>setState(()=> obspwText=!obspwText),
+              DomiTextField(title: '비밀번호', hintText:'비밀번호를 입력', obsText: obsPwText, suffixIcon: GestureDetector(
+                  onTap: ()=>setState(()=> obsPwText=!obsPwText),
                   child: Builder(
                       builder:(context) {
-                        if(obspwText){
+                        if(obsPwText){
                           return Icon(Icons.visibility);
                         }
                         else {
@@ -42,12 +38,11 @@ class _LoginPageState extends State<LoginPage> {
                         }
                       })),
               ),
-              SizedBox(height: 197.h),
-              LoginBotton(title: '아이디'),
+              Spacer(),
+              LoginButton(title: '아이디'),
             ],
           ),
         ),
-      ),
     );
   }
 }
