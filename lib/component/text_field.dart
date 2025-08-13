@@ -1,6 +1,5 @@
 import 'package:domi_app/component/font.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DomiTextField extends StatelessWidget {
   const DomiTextField({
@@ -18,20 +17,20 @@ class DomiTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final baseBroder = OutlineInputBorder(
-      borderRadius: BorderRadius.circular(8.r),
+    final baseBoder = OutlineInputBorder(
+      borderRadius: BorderRadius.circular(8),
       borderSide: const BorderSide(color: Color(0xff939393)),
     );
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text( title, style: DomiTextStyle.rowTitle),
-        SizedBox(height: 4.h),
+        SizedBox(height: 4),
         TextFormField(
           onTapOutside: (event)=>FocusManager.instance.primaryFocus?.unfocus(),
           obscureText: obsText,
           style: TextStyle(decorationThickness: 0),
-          decoration: InputDecoration(hintText: hintText, border: baseBroder,
+          decoration: InputDecoration(hintText: hintText, border: baseBoder,
             suffixIcon: suffixIcon,
           ),
         ),

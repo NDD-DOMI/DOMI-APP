@@ -1,6 +1,5 @@
 import 'package:domi_app/component/font.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginButton extends StatelessWidget {
   const LoginButton({super.key,required this.title});
@@ -8,7 +7,7 @@ class LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 150.w,vertical: 18.h),
+      padding: EdgeInsets.symmetric(horizontal: 150,vertical: 18),
       decoration: BoxDecoration(
         color: Color(0xffA7A7A7),
         borderRadius: BorderRadius.circular(8),

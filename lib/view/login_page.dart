@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../component/login_button.dart';
 import '../component/text_field.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -16,16 +15,16 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
         resizeToAvoidBottomInset: false,
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          padding: EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Image.asset('asset/images/domi.png',width: 100.w),
-              SizedBox(height: 12.h),
+              Image.asset('asset/images/domi.png',width: 100),
+              SizedBox(height: 12),
               Image.asset('asset/images/title.png',),
-              SizedBox(height: 47.h),
+              SizedBox(height: 47),
               DomiTextField(title: '아이디',hintText: '아이디를 입력', obsText: false, suffixIcon: null,),
-              SizedBox(height: 20.h),
+              SizedBox(height: 20),
               DomiTextField(title: '비밀번호', hintText:'비밀번호를 입력', obsText: obsPwText, suffixIcon: GestureDetector(
                   onTap: ()=>setState(()=> obsPwText=!obsPwText),
                   child: Builder(
